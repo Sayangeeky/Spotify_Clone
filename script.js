@@ -159,7 +159,7 @@ Array.from(document.getElementsByClassName("card")).forEach(e => {
             for (const song of songs) {
                 await new Promise(resolve => {
                     // Play the current song
-                    Playmusic(song);
+                    Playmusic(song.replaceAll("%20"," "));
                     
                     // Wait for the 'ended' event to determine when the song finishes
                     currentSong.addEventListener("ended", () => {
